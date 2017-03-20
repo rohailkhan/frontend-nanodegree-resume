@@ -169,6 +169,9 @@ img {
 
 span {
   padding: 5px;
+  color:yellow;
+  font-weight: bold;
+  font-style: italic;
 }
 
 #lets-connect {

@@ -8,7 +8,7 @@ var bio ={
 		"location : Auckland"
 	],
 	"skills": ["My Skills ", "Android Development  ", "JavaScript  ", "HTML  ", "CSS  ", "Bootstrap  ", "Github  ", "NodeJs  "],
-	"biopic  ": "images/fry.jpg  "
+	"pic": "images/fry.jpg"
 }
 
 var education={
@@ -66,3 +66,10 @@ var projects={
 	"platform": "Android",
 	"description": "Multi page Android Application for translation of some typical Miwak Language word"
 }
+
+var formattedHeade=HTMLheaderName.replace("%data%" ,"Rohail");
+$("#header").prepend(formattedHeade);
+var formattedrole=HTMLheaderRole.replace("%data%","Web developer");
+$("#header").append(formattedrole);
+var formattedpic=HTMLbioPic.replace("%data%", bio.pic);
+$("#header").append(formattedpic);
