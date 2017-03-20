@@ -1,13 +1,12 @@
 var bio ={
-	"Name": "Name : Rohail ",
-	"Role": "Role :Frontend Web developer",
-	"contacts": [
-		"mobile : 02102428830",
-		"email : rohailkhan@gmail.com",
-		"github : https://github.com/rohailkhan",
-		"location : Auckland"
-	],
-	"skills": ["My Skills ", "Android Development  ", "JavaScript  ", "HTML  ", "CSS  ", "Bootstrap  ", "Github  ", "NodeJs  "],
+	"name": "Rohail ",
+	"role": "Frontend Web developer","welcome":"Asalamo Alaykum / Welcome to this page","contacts": {
+		"mobile" : "02102428830",
+		"email" : "rohailkhan@gmail.com",
+		"github" : "https://github.com/rohailkhan",
+		"location" : "Auckland"
+	},
+	"skills": ["SQL ", "Android Development  ", "JavaScript  ", "HTML  ", "CSS  ", "Bootstrap  ", "Github  ", "NodeJs  "],
 	"pic": "images/fry.jpg"
 }
 
@@ -67,9 +66,23 @@ var projects={
 	"description": "Multi page Android Application for translation of some typical Miwak Language word"
 }
 
-var formattedHeade=HTMLheaderName.replace("%data%" ,"Rohail");
+var formattedHeade=HTMLheaderName.replace("%data%" ,bio.name);
 $("#header").prepend(formattedHeade);
-var formattedrole=HTMLheaderRole.replace("%data%","Web developer");
+var formattedrole=HTMLheaderRole.replace("%data%",bio.role);
 $("#header").append(formattedrole);
 var formattedpic=HTMLbioPic.replace("%data%", bio.pic);
 $("#header").append(formattedpic);
+var formatedHTMLmobile=HTMLmobile.replace("%data%",bio.contacts.mobile);
+var formatedHTMLemail=HTMLemail.replace("%data%",bio.contacts.email);
+var formatedHTMLgithub=HTMLgithub.replace("%data%",bio.contacts.github);
+var formatedHTMLwelcomeMsg=HTMLwelcomeMsg.replace("%data%",bio.welcome);
+
+$("#header").append(formatedHTMLmobile);
+$("#header").append(formatedHTMLemail);
+$("#header").append(formatedHTMLgithub);
+$("#header").append(formatedHTMLwelcomeMsg);
+
+//using if statement for bio.skills and using them in HTMLskillsStart and HTMLskills
+if (bio.skills.length>0){
+	$("#header").append(HTMLskillsStart);
+}
